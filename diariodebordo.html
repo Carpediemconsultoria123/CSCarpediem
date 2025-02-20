@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário de Bordo</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #FD4D09, #FF6600, #E88635);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        fieldset {
+            border: 4px solid orangered;
+            padding: 25px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            width: 40%;
+            height: 100%;
+        }
+
+        legend {
+            border: 1px solid orangered;
+            padding: 10px;
+            text-align: center;
+            background-color: orangered;
+            border-radius: 8px;
+        }
+
+        .input-box input, .input-box select, .input-box textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid orangered;
+            outline: none;
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 15px;
+            width: 100%;
+            padding: 8px;
+            border-radius: 10px;
+            margin-top: 5px;
+            box-shadow: 0px 0px 10px #ff8800;
+        }
+
+        #submit {
+            background-image: linear-gradient(to right, #E88635, #FF6600, #FD4D09);
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: black;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .checkbox-group .elemento {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid orangered;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px #ff8800;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Diário de Bordo:</legend>
+            <div class="input-box">
+                <label for="empresa">Empresa</label>
+                <input type="text" name="empresa" id="empresa" required>
+            </div><br>
+            <div class="input-box">
+                <label for="gestor_atendido">Gestor Atendido</label>
+                <input type="text" name="gestor_atendido" id="gestor_atendido" required>
+            </div><br>
+            <div class="input-box">
+                <label for="data_reuniao">Data da Reunião</label>
+                <input type="date" name="data_reuniao" id="data_reuniao" required>
+            </div><br>
+            <div class="input-box">
+                <label for="horario_reuniao">Horário da Reunião</label>
+                <input type="time" name="horario_reuniao" id="horario_reuniao" required>
+            </div><br>
+            <div class="input-box">
+                <label for="canal_de_atendimento">Canal de Atendimento</label>
+                <select id="canal_de_atendimento" name="canal_de_atendimento" required>
+                    <option value="">Selecione</option>
+                    <option value="presencial">Presencial</option>
+                    <option value="meet">Online Meet (ou Teams)</option>
+                    <option value="whatsapp">Online Whatsapp</option>
+                    <option value="e-mail">Online E-mail</option>
+                </select>
+            </div>
+            <h1>Áreas Envolvidas:</h1>
+            <div class="checkbox-group">
+                <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="financeiro"> Financeiro</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="comercial"> Comercial</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="juridico"> Jurídico</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dho"> DHO</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="rs_sp"> R&S SP</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="rs_rj"> R&S RJ</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="projetos"> Projetos e Planejamento</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="exp_colab"> Experiência do Colaborador</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="ti"> T.I.</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="exp_cliente">Experiência do Cliente</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dp_admissao">DP Admissão</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dp_rescisao">DP Rescisão</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dp_folha_pag">DP Folha de Pagamento</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dp_beneficios_va_vr_vt">DP Benefícios VA, VR e VT</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dp_rescisão_meli">DP Rescisão Meli</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dp_folha_de_ponto">DP Folha de Ponto</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dp_cadastro_ponto">DP Cadastro de Ponto</label></div>
+                    <div class="elemento">            
+                    <label><input type="checkbox" name="opcoes[]" value="dp_beneficios_convenios">DP Benefícios Convênios</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dp_rescisao_admissao_terceiros">DP Rescisão e Admissão de Terceiros</label></div>
+                    <div class="elemento">
+                    <label><input type="checkbox" name="opcoes[]" value="dp_cancelamento_rescisão">DP Cancelamento e Rescisão</label></div>     
+                          
+                </div>             
+            </div><br>
+            <div class="input-box">
+                <label for="relate_a_visita">Relate a Visita/Reunião</label>
+                <textarea name="relate_a_visita" id="relate_a_visita" rows="3"></textarea>
+            </div><br>
+            <div class="input-box">
+                <label for="acoes">Ações</label>
+                <textarea name="acoes" id="acoes" rows="3"></textarea>
+            </div><br>
+            <div class="input-box">
+                <label for="responsavel_atendimento">Responsável pelo Atendimento</label>
+                <select id="responsavel_atendimento" name="responsavel_atendimento" required>
+                    <option value="">Selecione</option>
+                    <option value="luis_fernandez">Luis Fernandez</option>
+                    <option value="mayara_rocha">Mayara Rocha</option>
+                    <option value="jose_soares">José Soares</option>
+                    <option value="rinaldo_figueiredo">Rinaldo Figueiredo</option>
+                </select>
+            </div><br>
+                   <button id="submit" type="submit">Enviar</button>
+        </fieldset>
+    </form>
+</body>
+</html>
