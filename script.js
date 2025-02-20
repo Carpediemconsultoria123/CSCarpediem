@@ -1,4 +1,4 @@
-const script_do_google = 'https://script.google.com/macros/s/AKfycbyTynnOqpxodXEY5Gs7p-02nezxYQcalpdPMD3TFRTwOJW2aDenCjw7Ij8roOXMJY5Epg/exec';
+const script_do_google = 'https://script.google.com/macros/s/AKfycbzrgg1paiWZbfP3GvmQaGopccXrQT7dQOGX5Ua8XcYwavdPMXb1H98oT01xzhj0FMyFmg/exec';
 const dados_do_formulario = document.forms['formulario-atendimento'];
 
 // Verifica se o formulário existe antes de adicionar o evento
