@@ -1,27 +1,20 @@
-function doPost(e) {
-    try {
-        var sheet = SpreadsheetApp.openById("1nKHN3Y4idtoAN5Jb1hq11D8vH5Xx7TW7BFLsVMzJ0UE").getSheetByName("Formulário de Atendimento");
-        var params = e.parameter;
-        
-        sheet.appendRow([
-            params.status_atendimento, 
-            params.data_solicitacao, 
-            params.empresa, 
-            params.gestor_atendido, 
-            params.nivel_atencao,
-            params.setor_responsavel,
-            params.observacao,
-            params.setor_responsavel (opcional¹),
-            params.observacao¹,
-            params.setor_responsavel (opcional²),
-            params.observacao²,
-            params.SLA_resposta,
-            params.CS_responsavel
-            // Adicione os outros campos conforme necessário
-        ]);
-        
-        return ContentService.createTextOutput(JSON.stringify({ "status": "sucesso" })).setMimeType(ContentService.MimeType.JSON);
-    } catch (error) {
-        return ContentService.createTextOutput(JSON.stringify({ "status": "erro", "mensagem": error.toString() })).setMimeType(ContentService.MimeType.JSON);
-    }
-}
+const script_do_google = 'https://script.google.com/macros/s/AKfycbyTynnOqpxodXEY5Gs7p-02nezxYQcalpdPMD3TFRTwOJW2aDenCjw7Ij8roOXMJY5Epg/exec';
+const dados_do_formulario = document.forms['formulario-atendimento'];
+
+dados_do_formulario.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    fetch(script_do_google, { 
+    method: 'POST', 
+    body: new FormData(dados_do_formulario)
+})
+.then(response => response.text()) 
+.then(data => {
+    console.log("Resposta do servidor:", data);
+    alert('Dados enviados com sucesso!');
+    dados_do_formulario.reset();
+})
+.catch(error => {
+    alert('Erro no envio dos dados!');
+    console.error('Erro no envio dos dados:', error);
+});
