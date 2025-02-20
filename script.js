@@ -1,4 +1,4 @@
-const script_do_google = 'https://script.google.com/macros/s/AKfycbzpr2gZxR_tMf8b-PPT6pC8ytEwsQKQm_BsqJk-knIOMU1G6s7uy-hToIx1FPx0VazFFQ/exec';
+const script_do_google = 'https://api.sheetmonkey.io/form/Nr7dAEk8MdhHRmXgnn9TS';
 const dados_do_formulario = document.forms['formulario-atendimento'];
 
 dados_do_formulario.addEventListener('submit', function(e) {
