@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FF6600;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Links */
+a {
+    color: #fff;
+    text-decoration: overline;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #23232e;
+    height: 8vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.nav-list li a.active {
+    font-weight: bold;
+    color: #FF6600;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+/* Responsivo: Menu */
+@media (max-width: 999px) {
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+/* Main + formulário */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    height: auto;
+    min-height: 92vh;
+    background: none;
+}
+
+/* Container do formulário */
+.form-wrapper {
+    background: #FF6600;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 9);
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Iframe responsivo */
+.form-wrapper iframe {
+    background: #FF6600; /* Fundo laranja */
+    padding: 20px 30px 20px 30px ;
+    width: 90%;
+    height: 2050px; /* ajuste conforme o tamanho do formulário */
+    overflow: hidden;
+}
+
+/* Campos adicionais no formulário */
+.flex-container {
+    margin-bottom: 20px;
+}
+
+.flex-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+    
+}
+
+.input-box {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.input-box input[type="radio"] {
+    margin: 0;
+}
+
+.input-box label {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsivo para campos */
+@media (max-width: 600px) {
+    .input-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* Ajusta a altura do main para ocupar tudo, menos o menu (8vh) */
+main {
+    height: 92vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Container do dashboard */
+.form-wrapper {
+    background: none;
+    box-shadow: none;
+    margin-top: 10px;
+    padding: 10;
+    border-radius: 0;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Iframe do Power BI ocupa toda a área disponível */
+.form-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
