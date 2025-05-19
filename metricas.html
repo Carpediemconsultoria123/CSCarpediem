@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt‑br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Métricas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        iframe {
-            border: none;
-            width: 90%;
-            height: 90%;
-            max-width: 1200px;
-            max-height: 800px;
-        }
-    </style>
+    <title>Protocolo de Atendimento</title>
+
+    <!-- ▸  NOVO — reutiliza o mesmo visual do menu que já existe no index -->
+    <link rel="stylesheet" href="style.css">          <!-- estilos gerais / menu -->
+    <link rel="stylesheet" href="metricas.css">    <!-- estilos da página -->
 </head>
 <body>
-    <iframe 
-        title="Overview" 
-        src="https://app.powerbi.com/view?r=eyJrIjoiYzdiNTQwODUtOWYyZi00YTBhLWE3ZTItOTJlMzE1NGQxMGEwIiwidCI6ImY1Nzg2ZmRiLTQ0MDAtNGE5OC05NjgzLTdmYTZlOWMwZjhkOSJ9&pageName=3344d606d030fbf12140" 
-        allowfullscreen="true">
-    </iframe>
+    <!-- ▸  NOVO — barra de navegação idêntica à do index ------------------- -->
+    <header>
+        <nav>
+            <a class="logo">Carpediem Consultoria</a>
+
+            <!-- hambúrguer para mobile (mantive o mesmo markup) -->
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <ul class="nav-list">
+                <li><a href="/">Início</a></li>
+                <li><a href="atendimento.html">Atendimento</a></li>
+                <li><a href="diariodebordo.html">Diário de Bordo</a></li>
+                <li><a href="metricas.html">Métricas</a></li>
+                <li><a href="/">Novos Clientes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <div class="form-wrapper">
+        <iframe 
+    title="Overview"
+    src="https://app.powerbi.com/view?r=eyJrIjoiYzdiNTQwODUtOWYyZi00YTBhLWE3ZTItOTJlMzE1NGQxMGEwIiwidCI6ImY1Nzg2ZmRiLTQ0MDAtNGE5OC05NjgzLTdmYTZlOWMwZjhkOSJ9&pageName=3344d606d030fbf12140" 
+    frameborder="0" 
+    allowfullscreen="true">
+        </iframe>
+    </div>
+</main>
+
+    <!-- ▸  mantém o JS que anima o menu mobile -->
+    <script src="mobile-navlbar.js"></script>
 </body>
 </html>
