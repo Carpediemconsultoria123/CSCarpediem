@@ -135,14 +135,14 @@ nav {
 
 /* ─────  CONTAINER  ───── */
 .container {
-    background: rgb(255, 102, 0);
-    backdrop-filter: blur(10px);
-    margin-top: 20px;
-    margin-bottom: 100px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .52);
+    background: #FF6600;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+    max-width: 800px;
     width: 100%;
-    max-width: 1000px;
+    margin-top: 40px;
+    margin-bottom: 100px;
 }
 
 h4 {
